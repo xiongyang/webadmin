@@ -1,12 +1,9 @@
-#include "webadmin.h"
+#include "webadminparaconfig.h"
 
 #include <string>
 #include <thread>
 #include <functional>
-#include <memory>
-#include <iostream>
-#include <vector>
-#include <map>
+
 
 
 
@@ -22,6 +19,22 @@ struct DemoClass
     {
         var1 = 0;
         var2 = 100;
+		static uint32_t u32 = 1;
+		static uint64_t u64 = 2;
+		static int32_t i32 = 3;
+		static int64_t i64 = 4;
+		static double d = 5.555;
+		static float f = 6.666;
+		static bool b = true;
+		
+		WebAdminParaConfig& cfg = WebAdminParaConfig::getInstance();
+		cfg.registerPropertRW("u32", &u32);
+		cfg.registerPropertRW("u64", &u64);
+		cfg.registerPropertRW("i32", &i32);
+		cfg.registerPropertRW("d", &d);
+		cfg.registerPropertRW("f", &f);
+		cfg.registerPropertRW("b", &b);
+
         registerProperty();
     }
     void registerProperty()
