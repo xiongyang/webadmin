@@ -1,6 +1,11 @@
 webadmin库
 给c++程序添加一个内置的网页服务器 实现对变量的显示与控制
 
+
+g++ -fPIC -O2 -o libwebadmin.so -shared  webadminParaConfigImpl.cpp  webadminparaconfig.cpp
+g++ test_main.cpp libwebadmin.so  -lwt -lwthttp
+
+
 依赖库
 boost  只依赖头文件库   基于 1.68开发,最新的应该也没有问题
 Wt库   https://www.webtoolkit.eu/wt/download    基于4.1.2开发 但是应该换成最新的也没问题
