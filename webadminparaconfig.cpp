@@ -1,5 +1,5 @@
 #include "webadminparaconfig.h"
-#include "webadminParaConfigImpl.h"
+#include "webadminparaconfigimpl.h"
 
 WebAdminParaConfig & WebAdminParaConfig::getInstance()
 {
